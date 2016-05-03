@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width">
+	<title>Flexbox</title>
+	<link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+	<link rel="stylesheet" href="css/styles-final.css">
+</head>
+<body>
+
+	<div class="container">
+		<header>
+			<h1>Hello World</h1>
+		</header>
+
+		<nav>
+			<a href="javascript:;" class="toggle-nav">
+				<span class="ion-navicon-round"></span>
+			</a>
+			<ul>
+				<li><a href="#">Item 01</a></li>
+				<li><a href="#">Item 02</a></li>
+				<li><a href="#">Item 03</a></li>
+				<li><a href="#">Item 04</a></li>
+				<li><a href="#">Item 05</a></li>
+				<li><a href="#">Item 06</a></li>
+				<li class="social">
+					<a href="#"><span class="ion-social-twitter"></span></a>
+				</li>
+				<li class="social">
+					<a href="#"><span class="ion-social-facebook"></span></a>
+				</li>
+				<li class="social">
+					<a href="#"><span class="ion-social-instagram-outline"></span></a>
+				</li>
+				<li class="social">
+					<a href="#"><span class="ion-social-github"></span></a>
+				</li>
+			</ul>
+		</nav>
+
+		<section class="banner">
+			<img src="images/header-bg.jpg" alt="banner">
+		</section>
+
+		<section class="copy">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta voluptatem magnam error nisi, repudiandae laborum non laudantium ea tenetur fugit laboriosam blanditiis quasi placeat a! Minus veniam fuga qui amet.</p>
+		</section>
+
+		<section class="form">
+			<form>
+				<input type="text" placeholder="Name">
+				<input type="email" placeholder="Email">
+				<button>Submit</button>
+			</form>
+		</section>
+
+		<footer>
+			<p>Copyright 2016 - All rights reserved</p>
+		</footer>
+	</div>
+	
+
+	<script src="https://code.jquery.com/jquery-1.12.3.min.js"></script>
+	<script>
+		$('.toggle-nav').click(function(){
+			$('nav ul').toggleClass('open');
+		});
+	</script>
+</body>
+</html>
