@@ -21,8 +21,15 @@ ul{
 .container{
 	max-width: 1200px;
 	width: 95%;
-	border: dotted 2px red;
 	margin: auto;
+	display: flex;
+	flex-direction: column;
+}
+
+/* selector universal, SOLO para hijos directos de .container */
+.container > *{
+	/* esto es para luego poder ordenar a mi gusto los flex-items */
+	order: 9999;
 }
 
 header{
@@ -31,6 +38,8 @@ header{
 	padding: 10px;
 	border-radius: 10px;
 	margin: 10px 0;
+	/* asigno la posición 2 al header */
+	order: 2 !important; /* el !important es para que tenga más jerarquía que el selector universal de la línea 30 */
 }
 header h1{
 	margin: 0;
@@ -40,12 +49,27 @@ nav{
 	background-color: #FFDB94;
 	border-radius: 10px;
 	margin: 10px 0;
+	/* asigno la posición 2 al header */
+	order: 1 !important; /* el !important es para que tenga más jerarquía que el selector universal de la línea 30 */
 }
 
 nav ul{
 	display: none;
+	flex-wrap: wrap; /* para que todos los elementos se ajusten al flex-container */
 }
 
+/* clase que se aplica dinámicamente con jQuery */
+nav ul.open{
+	display: flex; /* hace que el <ul> sea flex-container */
+}
+
+nav li{
+	width: 100%;
+}
+nav .social{
+	width: 25%;
+	/* tamaño especial para los <li> con class "social" */
+}
 
 nav li a{
 	display: block;
@@ -85,16 +109,56 @@ footer{
 	text-align: center;
 }
 
+.copy{
+	order: 4;
+}
+
+.form{
+	order: 3;
+}
 
 @media (min-width: 600px) {
-	
+	header{
+		/* asigno la posición 1 al header */
+		order: 1 !important; /* el !important es para que tenga más jerarquía que el selector universal de la línea 30 */
+	}
+	nav{
+		/* asigno la posición 1 al header */
+		order: 2 !important; /* el !important es para que tenga más jerarquía que el selector universal de la línea 30 */
+	}
 	.toggle-nav{
 		display: none;
 	}
-	
+	nav ul{
+		display: flex; /* antes estaba oculto, ahora se muestra, pero como flex-container */
+	}
+	nav li{
+		width: 50%; /* ahora los <li> quedan de a 2 por línea */
+	}
 }
 
 
 @media (min-width: 800px) {
-	
+	.banner,
+	.form,
+	.copy{
+		order: 3; /* al tener todos el mismo valor, se ordenarán en función de como están en el html */
+	}
+	nav{
+		overflow: hidden;
+	}
+	nav li{
+		flex: 3 0 0;
+		/* grow / shrink / basis */
+		/* con el 3 decimos que ocupen 3 veces más que los <li> con class "social" */
+		/* el 1er cero no tiene función pero debe declararse */
+		/* el 2do cero es importante, pues pisa el width: 50%; asignado en el media-querie anterior */
+	}
+	nav .social{
+		flex: 1 0 0;
+		/* grow / shrink / basis */
+		/* con el 1 decimos que ocupen solo 1 vez respecto al espacio sobrante */
+		/* el 1er cero no tiene función pero debe declararse */
+		/* el 2do cero es importante, pues pisa el width: 25%; asignado en la línea 69 */
+	}
 }

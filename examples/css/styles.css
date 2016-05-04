@@ -9,7 +9,7 @@ body{
 
 .box{
 	color: white;
-	font-size: 50px;
+	font-size: 30px;
 	text-align: center;
 	text-shadow: 4px 4px 0 rgba(0,0,0,0.1);
 	padding: 10px;
@@ -30,4 +30,101 @@ body{
 .container{
 	border: solid 10px orange;
 	min-height: 200px;
+}
+
+/* Lo nuevo que agregamos en clase */
+
+.flex{
+	display: flex;
+}
+
+.fd-rw{
+	flex-direction: row;
+}
+
+.fd-rr{
+	flex-direction: row-reverse;
+}
+
+.fd-co{
+	flex-direction: column;
+}
+
+.fd-cr{
+	flex-direction: column-reverse;
+}
+
+.fw-wr{
+	flex-wrap: wrap;
+}
+
+.fw-wrv{
+	flex-wrap: wrap-reverse;
+}
+
+#especial .box,
+#especial2 .box{
+	width: 33.33%;
+}
+
+.jc-fe{
+	justify-content: flex-end;
+}
+
+.jc-cn{
+	justify-content: center;
+}
+
+.jc-sb{
+	justify-content: space-between;
+}
+
+.jc-sa{
+	justify-content: space-around;
+}
+
+.ai-fs{
+	align-items: flex-start;
+}
+
+.ai-fe{
+	align-items: flex-end;
+}
+
+.ai-bs{
+	align-items: baseline;
+}
+
+.ai-cn{
+	align-items: center;
+}
+
+#especial3{
+	flex-wrap: wrap;
+	/*align-content: stretch;*/
+	height: 900px;
+}
+
+#especial3 .box{
+	width: 33.33%;
+}
+
+.ac-sb{
+	align-content: space-between;
+}
+
+.ac-sa{
+	align-content: space-around;
+}
+
+.ac-cn{
+	align-content: center;
+}
+
+.ac-fs{
+	align-content: flex-start;
+}
+
+.ac-fe{
+	align-content: flex-end;
 }
